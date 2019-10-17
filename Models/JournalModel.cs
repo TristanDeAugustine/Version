@@ -1,6 +1,6 @@
 using System;
 
-namespace Capstone_0.Models
+namespace Version
 {
   public class JournalModel
   {
@@ -8,4 +8,4 @@ namespace Capstone_0.Models
     public int UserID { get; set; }
     public DateTime AccountCreated { get; set; } = DateTime.Now;
   }
-}
+} 

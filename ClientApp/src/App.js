@@ -1,22 +1,31 @@
 import React, { Component } from 'react'
-import { Route } from 'react-router'
-import { Layout } from './components/Layout'
-import { Home } from './components/Home'
-import { FetchData } from './components/FetchData'
-import { Counter } from './components/Counter'
-import Testing from './Testing'
+import Journal from './components/Journal.jsx'
+import Tasks from './components/Tasks.jsx'
+// import Calendar from './components/Calendar.jsx'
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
+import Cal from './images/Calendar.jpg'
+import Jour from './images/Journal.jpg'
+import Tas from './images/List.jpg'
+import Homepage from './components/Homepage.jsx'
+import GoogleCalendar from './googleCalendar'
 
-export default class App extends Component {
-  static displayName = App.name
+import { Helmet } from 'react-helmet'
 
+class App extends Component {
   render() {
     return (
-      <Layout>
-        <Route exact path="/" component={Home} />
-        <Route path="/counter" component={Counter} />
-        <Route path="/fetch-data" component={FetchData} />
-        <Route path="/hello" component={Testing} />
-      </Layout>
+      <>
+        <Router>
+          <Switch>
+            <Route exact path="/" component={Homepage} />
+            <Route exact path="/Journal" component={Journal} />
+            <Route exact path="/Calendar" component={GoogleCalendar} />
+            <Route exact path="/Tasks" component={Tasks} />
+          </Switch>
+        </Router>
+      </>
     )
   }
 }
+
+export default App
