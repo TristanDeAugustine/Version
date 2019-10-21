@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import '../journal.css'
+import axios from 'axios'
 
 class App extends React.Component {
   constructor(props) {
@@ -12,6 +13,11 @@ class App extends React.Component {
       infoClicker: false,
       clicker: ''
     }
+  }
+  componentDidMount() {
+    axios.get('/api/Journal').then(resp => {
+      console.log(resp)
+    })
   }
   updateTextArea(key, value) {
     // update react state
@@ -30,6 +36,9 @@ class App extends React.Component {
       value: this.state.newItem.slice(),
       level: this.state.clicker
     }
+    axios.post('/api/Journal', newItem).then(resp => {
+      console.log(resp)
+    })
 
     // copy current list of items
     const list = [...this.state.list]
@@ -43,6 +52,10 @@ class App extends React.Component {
       newItem: ''
     })
   }
+
+  // saveJournal = journal => {
+  //   const data = { }
+  // }
 
   render() {
     return (

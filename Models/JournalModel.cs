@@ -1,11 +1,13 @@
 using System;
 
-namespace Version
+namespace Version.Models
 {
   public class JournalModel
   {
     public int ID { get; set; }
-    public int UserID { get; set; }
-    public DateTime AccountCreated { get; set; } = DateTime.Now;
+
+    public string text { get; set; }
+
+    public string status { get; set; }
   }
-} 
+}

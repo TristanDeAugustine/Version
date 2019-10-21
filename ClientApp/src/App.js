@@ -8,6 +8,7 @@ import Jour from './images/Journal.jpg'
 import Tas from './images/List.jpg'
 import Homepage from './components/Homepage.jsx'
 import GoogleCalendar from './googleCalendar'
+import './index.css'
 
 import { Helmet } from 'react-helmet'
 
